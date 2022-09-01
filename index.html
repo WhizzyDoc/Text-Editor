@@ -12,10 +12,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" /> 
     <!--Internal CSS start-->
+    <link rel="stylesheet" href="bscreen.css" type="text/css">
     <link rel="stylesheet" href="style.css" type="text/css">
+    
 </head> 
 <!--Body start-->
-<body onkeydown="myFunction(event)">
+<body>
     <section class=""> 
         <h2 class="shadow-sm"><i class="fa fa-edit"></i> RIGAN TEXT EDITOR</h2> 
         <div class="row shadow-sm sticky"> 
@@ -26,14 +28,14 @@
                     <div onclick="f0()" class="dd" data-toggle="tooltip" data-placement="top" title="File Options">
                         <button class="shadow-sm btn btn-outline-primary side"><i class="fa fa-caret-down"></i> File Options</button>
                         <div class="dd-content">
-                            <a title="Save to Workspace"><i class="fa fa-save"></i> Save</a>
-                            <a title="download document (.doc)" id="downloadDoc"><i class="fa fa-download"></i> Download</a>
+                            <a title="Save to Workspace" onclick="showsave()"><i class="fa fa-save"></i> Save</a>
+                            <a title="download document" onclick="showdownload()" ><i class="fa fa-download"></i> Download</a>
                             <a title="Saved documents"><i class="fa fa-folder"></i> Recent</a>
                         </div>
                     </div>
                     <button type="button" class="shadow-sm btn btn-outline-primary side" data-toggle="tooltip" data-placement="top" title="Text Color">Aa <input type="color" id="fontc" oninput="textarea1.style.color=fontc.value" /></button>
-                    <button type="button" onclick="f1()" class="shadow-sm btn btn-outline-primary side" data-toggle="tooltip" data-placement="top" title="Bold Text"><b>B</b></button> 
-                    <button type="button" onclick="f2()" class="shadow-sm btn btn-outline-primary side" data-toggle="tooltip" data-placement="top" title="Italic Text"><i>Italic</i></button> 
+                    <button type="button" id="bold" onclick="f1()" class="shadow-sm btn btn-outline-primary side" data-toggle="tooltip" data-placement="top" title="Bold Text"><b>B</b></button> 
+                    <button type="button" id="italic" onclick="f2()" class="shadow-sm btn btn-outline-primary side" data-toggle="tooltip" data-placement="top" title="Italic Text"><i>Italic</i></button> 
                     <button type="button" onclick="f3()" class=" shadow-sm btn btn-outline-primary side" data-toggle="tooltip" data-placement="top" title="Left Align"><i class="fas fa-align-left"></i></button> 
                     <button type="button" onclick="f4()" class="btn shadow-sm btn-outline-primary side" data-toggle="tooltip" data-placement="top" title="Center Align"><i class="fas fa-align-center"></i></button> 
                     <button type="button" onclick="f5()" class="btn shadow-sm btn-outline-primary side" data-toggle="tooltip" data-placement="top" title="Right Align"><i class="fas fa-align-right"></i></button>
@@ -41,8 +43,8 @@
                     <button type="button" onclick="f6()" class="btn shadow-sm btn-outline-primary side" data-toggle="tooltip" data-placement="top" title="Uppercase Text">ABC</button> 
                     <button type="button" onclick="f7()" class="btn shadow-sm btn-outline-primary side" data-toggle="tooltip" data-placement="top" title="Lowercase Text">abc</button> 
                     <button type="button" onclick="f8()" class="btn shadow-sm btn-outline-primary side" data-toggle="tooltip" data-placement="top" title="Capitalize Text">Abc</button> 
-                    <button type="button" onclick="f9()" class="btn shadow-sm btn-outline-primary side" data-toggle="tooltip" data-placement="top" title="Underline"><u>U</u></button>
-                    <button type="button" onclick="f10()" class="btn shadow-sm btn-outline-primary side" data-toggle="tooltip" data-placement="top" title="Strikethrough"><strike>abc</strike></button>
+                    <button type="button" id="under" onclick="f9()" class="btn shadow-sm btn-outline-primary side" data-toggle="tooltip" data-placement="top" title="Underline"><u>U</u></button>
+                    <button type="button" id="strike" onclick="f10()" class="btn shadow-sm btn-outline-primary side" data-toggle="tooltip" data-placement="top" title="Strikethrough"><strike>abc</strike></button>
 
                     <button type="button" class="shadow-sm btn btn-outline-primary side" data-toggle="tooltip" data-placement="top" title="Font Style">
                         <select id="fontfa" onchange="textarea1.style.fontFamily=fontfa.value">
@@ -96,13 +98,21 @@
 
         </div> 
 
-    </section> 
+    </section>
 
-    <br> 
 
-    <br> 
+    <div class="name" id="name">
+        <div class="name-box">
+            <h2>Save filename As?</h2>
+            <input type="text" id="docname"> <span class="h2">.doc</span> <br>
+            <div style="display:flex; justify-content:space-between;margin-top:5px;">
+            <button type="button" onclick="hidesave()" class="btn shadow-sm btn-outline-primary side" data-toggle="tooltip" data-placement="top">Cancel</button>
+            <button type="button" id="downloadDoc" onclick="hidesave()" class="btn shadow-sm btn-outline-primary side" data-toggle="tooltip" data-placement="top">Download</button>
+            <button type="button" id="saveDoc" onclick="hidesave();" class="btn shadow-sm btn-outline-primary side" data-toggle="tooltip" data-placement="top">Save</button>
+            </div>
 
-    <h6 style="text-align:center;">Rigan Tech 2022.</h6> 
+        </div>
+    </div>
 
   
 

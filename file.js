@@ -12,6 +12,26 @@ function download(filename, text) {
 
   document.getElementById("downloadDoc").addEventListener("click", function() {
     var text = txtarea.value;
-    var filename = "document.doc";
+    var name = document.getElementById("docname");
+    if(name.value == "") {
+      filename ="document.doc";
+    }
+    else {
+      filename =name.value + ".doc";
+    }
     download(filename, text);
   }, false);
+
+function showdownload() {
+  document.getElementById("name").style.display = "block";
+  document.getElementById("saveDoc").style.display = "none";
+}
+function showsave() {
+  document.getElementById("name").style.display = "block";
+  document.getElementById("downloadDoc").style.display = "none";
+}
+function hidesave() {
+  document.getElementById("downloadDoc").style.display = "block";
+  document.getElementById("saveDoc").style.display = "block";
+  document.getElementById("name").style.display = "none";
+}

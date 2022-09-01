@@ -19,10 +19,12 @@ function f1() {
     //function to make the text bold using DOM method 
     if(flagb==0) {
         document.getElementById("textarea1").style.fontWeight = "bold";
+        document.getElementById("bold").style.backgroundColor = "pink";
         flagb = 1;
     }
      else {
          document.getElementById("textarea1").style.fontWeight = "normal";
+         document.getElementById("bold").style.backgroundColor = "white";
          flagb = 0;
      }
 } 
@@ -34,10 +36,12 @@ function f2() {
     //function to make the text italic using DOM method 
     if(flagi==0) {
         document.getElementById("textarea1").style.fontStyle = "italic";
+        document.getElementById("italic").style.backgroundColor = "pink";
         flagi = 1;
     }
      else {
          document.getElementById("textarea1").style.fontStyle = "normal";
+         document.getElementById("italic").style.backgroundColor = "white";
          flagi = 0;
      }
 } 
@@ -110,10 +114,13 @@ function f9() {
     //function to make the text underlined  
      if(flagu==0) {
         document.getElementById("textarea1").style.textDecoration = "underline";
+        document.getElementById("under").style.backgroundColor = "pink";
+        document.getElementById("strike").style.backgroundColor = "white";
         flagu = 1;
     }
      else {
          document.getElementById("textarea1").style.textDecoration = "none";
+         document.getElementById("under").style.backgroundColor = "white";
          flagu = 0;
      }
     
@@ -124,10 +131,13 @@ function f10() {
     //function to make the text underlined  
      if(flags==0) {
         document.getElementById("textarea1").style.textDecoration = "line-through";
+        document.getElementById("strike").style.backgroundColor = "pink";
+        document.getElementById("under").style.backgroundColor = "white";
         flags = 1;
     }
      else {
          document.getElementById("textarea1").style.textDecoration = "none";
+         document.getElementById("strike").style.backgroundColor = "white";
          flags = 0;
      }
     

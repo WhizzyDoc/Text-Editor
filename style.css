@@ -2,7 +2,7 @@ body {
     background-color:#fdf5e6;
     width: 100vw;
 }
-h2 { 
+h2, .h2 { 
     padding-top: 20px; 
     padding-bottom: 20px; 
     text-align: center; 
@@ -46,7 +46,7 @@ textarea {
 
 @media only screen and (max-width: 469px) {
     textarea {
-        width: 320px;
+        width: 0px;
         height: 640px;
     }
 }
@@ -90,7 +90,7 @@ textarea {
 }
 
 
-@media only screen and (max-width: 768px) {
+@media screen and (min-width:300px) and (max-width: 768px) {
     .flex-b {
         display: flex; 
         justify-content: flex-start; 
@@ -121,7 +121,7 @@ textarea {
 }
 
 
-@media only screen and (min-width: 769px) {
+@media screen and (min-width: 769px) {
     .flex-b {
         display: flex; 
         justify-content: center; 
@@ -145,6 +145,8 @@ textarea {
     }
 }
 
+
+
 .bold-style {
     font-weight: bold;
 }
@@ -167,4 +169,33 @@ input[type="color"] {
 .dd-content > a:hover {
     color: white !important;
     background: #957dad; 
+}
+
+.name {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.80);
+    z-index: 3;
+    display: none;
+}
+.name-box {
+    padding: 20px;
+    background: white;
+    border: 2px solid #957dad;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+input[type="text"] {
+    width: 200px;
+    padding: 5px;
+    font-size: 15px;
+    border: 2px solid #957dad;
+    border-radius: 5px;
+    outline: none;
 }
